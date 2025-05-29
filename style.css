@@ -50,6 +50,8 @@ header p {
   max-width: 800px;
   margin: auto;
   animation: fadeDown 1.2s ease-in-out;
+
+  margin-left: -3in;
 }
 
 .hero h1 {
