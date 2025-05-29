@@ -34,18 +34,18 @@ header {
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 2px;
   transform: scale(1.05);
 }
 
 header p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-top: 0.5rem;
 }
 
 .hero {
-  padding: 6rem 2rem 3rem;
+  padding: 5rem 1.5rem 2rem;
   text-align: left;
   max-width: 800px;
   margin: auto;
@@ -53,7 +53,7 @@ header p {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   line-height: 1.4;
 }
@@ -85,7 +85,8 @@ header p {
   100% { transform: translateY(0); opacity: 1; }
 }
 
-section.about, section.contact {
+section.about,
+section.contact {
   animation: bounceDown 1s ease;
   margin-top: 2rem;
   background: rgba(255, 255, 255, 0.9);
@@ -105,4 +106,36 @@ main h2 {
 a {
   color: #2e7d32;
   text-decoration: none;
+}
+
+/* ================================
+   ✅ Responsive Design
+   ================================ */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .container,
+  section.about,
+  section.contact {
+    padding: 1rem;
+  }
+
+  section.about,
+  section.contact {
+    margin: 1rem;
+  }
 }
