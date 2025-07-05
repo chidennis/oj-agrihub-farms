@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - O-J Agrihub Farms</title>
+  <title>O-J Agrihub Farms</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -35,8 +35,19 @@
       color: #2e7d32;
     }
 
-    section {
-      padding: 5rem 0;
+    #hero {
+      background: url('images/agro.png') center center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    #about {
+      padding: 4rem 0;
+      background: #fff;
     }
 
     footer {
@@ -49,32 +60,38 @@
 </head>
 
 <body>
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="index.html">O-J Agrihub Farms</a>
+      <a class="navbar-brand" href="#">O-J Agrihub Farms</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="what-we-do.html">What We Do</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          contact.html
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-light">
+  <!-- Hero Section -->
+  <section id="hero" class="text-center">
     <div class="container" data-aos="fade-up">
-      <h2 class="text-center text-success mb-4">Contact Us</h2>
-      <ul class="list-unstyled text-center">
-        <li><strong>Phone:</strong> +2347072367921</li>
-        <li><strong>Address:</strong> Plot 5 Amadi Street, Obinze, Imo State, Nigeria</li>
-        <li><strong>Email:</strong> <a href="mailto:admin@ojagrihubfarms.com">admin@ojagrihubfarms.com</a></li>
-      </ul>
+      <!-- Hero background only -->
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-success text-center mb-4">Welcome to O-J Farms</h2>
+      <p class="text-center">Think quality livestock... Think smart farming... Think sustainable future...</p>
+      <p class="text-center">We are committed to raising healthy livestock using sustainable and ethical farming practices.</p>
+      <p class="text-center"><em>Healthy livestock. Honest prices.</em></p>
     </div>
   </section>
 
