@@ -1,73 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>O-J Agrihub Farms</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS Animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
-    header h1 {
-      color: #1b5e20; /* Dark green */
-      text-shadow: 1px 1px 2px #fff;
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #333;
     }
 
-    header p {
-      color: #1b5e20;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #fff;
-    }
-
-    .hero h1 {
+    .navbar-brand {
+      font-weight: 700;
       color: #1b5e20;
     }
 
-    .hero p {
-      color: #1b5e20;
+    .navbar-brand:hover {
+      color: #2e7d32;
+    }
+
+    #hero {
+      background: url('images/agro.png') center center/cover no-repeat;
+      padding: 6rem 0;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    #about {
+      padding: 4rem 0;
+      background: #fff;
     }
 
     footer {
+      background: #1b5e20;
+      color: white;
       text-align: center;
       padding: 1rem;
-      color: #ccc;
     }
   </style>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1>O-J Agrihub Farms</h1>
-      <p>Empowering Livestock Production</p>
-    </div>
-  </header>
 
-  <section class="hero">
-    <h1><em>Quality livestock...</em><br>Smart farming...<br>Sustainable future...</h1>
-    <p>Raising organic livestock through sustainable</p> 
-    <p>smart farming built for today’s needs and tomorrow’s growth.</p>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">O-J Agrihub Farms</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="text-center">
+    <div class="container" data-aos="fade-up">
+      <h1 class="display-4 fw-bold">Empowering Smart Farmers</h1>
+      <p class="lead">Raising healthy livestock through sustainable farming.</p>
+      <a href="#about" class="btn btn-success mt-3">Learn More</a>
+    </div>
   </section>
 
-  <main class="container">
-    <section class="about">
-      <h2>About Us</h2>
-      <p>We are committed to raising healthy livestock using sustainable and ethical farming practices.</p>
-      <p><em>Healthy livestock. Honest prices</em></p>
-    </section>
+  <!-- About Section -->
+  <section id="about">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-success text-center mb-4">Welcome to O-J Farms</h2>
+      <p class="text-center">Think quality livestock... Think smart farming... Think sustainable future...</p>
+      <p class="text-center">We are committed to raising healthy livestock using sustainable and ethical farming practices.</p>
+      <p class="text-center"><em>Healthy livestock. Honest prices.</em></p>
+    </div>
+  </section>
 
-    <section class="contact">
-  <h2>Contact Us</h2>
-  <ul>
-    <li><strong>Phone:</strong> +2347072367921</li>
-    <li><strong>Address:</strong> Plot 5 Amadi Street, Obinze<br>
-      Imo State<br>
-      Nigeria
-    </li>
-    <li><strong>Email:</strong> <a href="mailto:admin@ojagrihubfarms.com">admin@ojagrihubfarms.com</a></li>
-  </ul>
-</section>
-  </main>
+  <!-- Contact Section -->
+  <section id="contact" class="bg-light py-5">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center text-success mb-4">Contact Us</h2>
+      <ul class="list-unstyled text-center">
+        <li><strong>Phone:</strong> +2347072367921</li>
+        <li><strong>Address:</strong> Plot 5 Amadi Street, Obinze, Imo State, Nigeria</li>
+        <li><strong>Email:</strong> <a href="mailto:admin@ojagrihubfarms.com">admin@ojagrihubfarms.com</a></li>
+      </ul>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 O-J Agrihub Farms. All rights reserved.</p>
   </footer>
+
+  <!-- JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
