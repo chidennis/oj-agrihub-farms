@@ -6,15 +6,9 @@
   <title>O-J Agrihub Farms</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Push down main container more on both mobile and desktop */
+    /* Push down exactly 2 inches */
     main.container {
-      margin-top: 7rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      main.container {
-        margin-top: 5rem;
-      }
+      margin-top: 2in;
     }
 
     /* Style nav links */
@@ -22,6 +16,13 @@
       color: #333; /* dark grey */
       font-weight: 600;
       text-decoration: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      /* On smaller screens, use relative spacing */
+      main.container {
+        margin-top: 5rem;
+      }
     }
   </style>
 </head>
