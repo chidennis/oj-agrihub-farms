@@ -6,64 +6,46 @@
   <title>O-J Agrihub Farms</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    header h1 {
-      color: #1b5e20; /* Dark green */
-      text-shadow: 1px 1px 2px #fff;
+    /* Push down exactly 2 inches */
+    main.container {
+      margin-top: 2in;
     }
 
-    header p {
-      color: #1b5e20;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #fff;
+    /* Style nav links */
+    nav a {
+      color: #333; /* dark grey */
+      font-weight: 600;
+      text-decoration: none;
     }
 
-    .hero h1 {
-      color: #1b5e20;
-    }
-
-    .hero p {
-      color: #1b5e20;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      color: #ccc;
+    @media screen and (max-width: 768px) {
+      /* On smaller screens, use relative spacing */
+      main.container {
+        margin-top: 5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>O-J Agrihub Farms</h1>
-      <p>Empowering Livestock Production</p>
+      <nav>
+        <a href="index.html">Home</a> |
+        <a href="what-we-do.html">What We Do</a> |
+        <a href="contact.html">Contact Us</a>
+      </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <h1><em>Quality livestock...</em><br>Smart farming...<br>Sustainable future...</h1>
-    <p>Raising organic livestock through sustainable</p> 
-    <p>smart farming built for today’s needs and tomorrow’s growth.</p>
-  </section>
-
   <main class="container">
     <section class="about">
-      <h2>About Us</h2>
+      <h2>Welcome to O-J Farms</h2>
+      <p>Think quality livestock..</p>
+      <p>Think smart farming...</p>
+      <p>Think sustainable future...</p>
       <p>We are committed to raising healthy livestock using sustainable and ethical farming practices.</p>
-      <p><em>Healthy livestock. Honest prices</em></p>
+      <p><em>Healthy livestock. Honest prices.</em></p>
     </section>
-
-    <section class="contact">
-  <h2>Contact Us</h2>
-  <ul>
-    <li><strong>Phone:</strong> +2347072367921</li>
-    <li><strong>Address:</strong> Plot 5 Amadi Street, Obinze<br>
-      Imo State<br>
-      Nigeria
-    </li>
-    <li><strong>Email:</strong> <a href="mailto:admin@ojagrihubfarms.com">admin@ojagrihubfarms.com</a></li>
-  </ul>
-</section>
   </main>
 
   <footer>
