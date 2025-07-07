@@ -140,4 +140,11 @@ a {
   section.contact {
     margin: 1rem;
   }
+
+  #hero {
+    height: 60vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
 }
