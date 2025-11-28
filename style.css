@@ -1,8 +1,15 @@
+/* ================================
+   GLOBAL STYLES
+================================ */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background: url('images/agro.png') no-repeat center center fixed;
+
+  /* Desktop background behavior */
+  background: url('images/agro.png') no-repeat center top;
   background-size: cover;
+  background-attachment: scroll;  /* was 'fixed' — mobile bug */
+
   color: #f5f5f5;
   position: relative;
   z-index: 0;
@@ -15,6 +22,9 @@ body {
   padding: 2rem 1rem;
 }
 
+/* ================================
+   HEADER
+================================ */
 header {
   text-align: center;
   padding: 4rem 1rem;
@@ -34,6 +44,9 @@ header p {
   margin-top: 0.5rem;
 }
 
+/* ================================
+   HERO SECTION
+================================ */
 .hero {
   padding: 5rem 1.5rem 2rem;
   text-align: left;
@@ -56,13 +69,12 @@ header p {
   line-height: 1.6;
 }
 
+/* ================================
+   ANIMATIONS
+================================ */
 @keyframes glow {
-  from {
-    text-shadow: 2px 2px 10px #2e7d32, 0 0 10px #2e7d32;
-  }
-  to {
-    text-shadow: 2px 2px 20px #43a047, 0 0 20px #43a047;
-  }
+  from { text-shadow: 2px 2px 10px #2e7d32; }
+  to   { text-shadow: 2px 2px 20px #43a047; }
 }
 
 @keyframes bounceDown {
@@ -77,6 +89,9 @@ header p {
   100% { transform: translateY(0); opacity: 1; }
 }
 
+/* ================================
+   CONTENT SECTIONS
+================================ */
 section.about,
 section.contact {
   animation: bounceDown 1s ease;
@@ -91,9 +106,7 @@ section.contact {
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-main h2 {
-  color: #2e7d32;
-}
+main h2 { color: #2e7d32; }
 
 a {
   color: #2e7d32;
@@ -101,24 +114,22 @@ a {
 }
 
 /* ================================
-   ✅ Responsive Design
-   ================================ */
+   RESPONSIVE DESIGN
+================================ */
 @media screen and (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
+
+  /* 🔥 Mobile background FIX */
+  body {
+    background-position: top center;
+    background-size: 100% 100%;   /* Stretch to fill mobile screen — no grey */
+    background-attachment: scroll;
   }
 
-  header p {
-    font-size: 1rem;
-  }
+  header h1 { font-size: 2rem; }
+  header p  { font-size: 1rem; }
 
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
+  .hero h1 { font-size: 1.5rem; }
+  .hero p  { font-size: 1rem; }
 
   .container,
   section.about,
