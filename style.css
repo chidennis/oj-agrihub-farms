@@ -123,6 +123,7 @@ a {
     background-position: top center;
     background-size: 100% 100%;   /* Stretch to fill mobile screen — no grey */
     background-attachment: scroll;
+    background-image: url('images/mobile-agro.png') !important;
   }
 
   header h1 { font-size: 2rem; }
