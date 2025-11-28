@@ -46,14 +46,15 @@
 
     /* HERO SECTION */
     #hero {
-  position: relative;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  padding: 3rem 1.5rem;
-}
+    position: relative;
+      background: url('images/agro.png') center center / cover no-repeat;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 3rem 1.5rem;
+    }
 
 
     /* REMOVE DARK OVERLAY COMPLETELY */
@@ -79,9 +80,10 @@
     }
 
     /* ---------- MOBILE FIX FOR FULL IMAGE ----------- */
-    @media (max-width: 576px) {
+    @media (max-width: 912px) {
       #hero {
         background-size: contain !important;
+        background: url('images/mobile-agro.png') center center / cover no-repeat;
         background-repeat: no-repeat;
         background-position: top center;
         min-height: 60vh;
