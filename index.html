@@ -9,7 +9,7 @@
   <meta name="color-scheme" content="light">
   <meta name="supported-color-schemes" content="light">
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap -->
@@ -18,7 +18,7 @@
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- AOS Animations -->
+  <!-- AOS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
@@ -68,6 +68,13 @@
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* FORCE SAME IMAGE SIZE */
+    .product-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
     }
 
     /* ---------------- CTA ---------------- */
@@ -147,11 +154,11 @@
       Our Farm Products
     </h2>
 
-    <div class="row g-4 justify-content-center">
+    <div class="row justify-content-center gx-4">
       <!-- CATFISH -->
       <div class="col-md-5" data-aos="zoom-in">
-        <div class="card product-card">
-          <img src="images/catfish_in_bowl6.jpg" class="card-img-top" alt="Fresh Catfish">
+        <div class="card product-card h-100">
+          <img src="images/catfish_in_bowl6.jpg" alt="Fresh Catfish">
           <div class="card-body text-center">
             <h5>Fresh Catfish</h5>
             <p>Table & smoke sizes available</p>
@@ -161,8 +168,8 @@
 
       <!-- POULTRY -->
       <div class="col-md-5" data-aos="zoom-in" data-aos-delay="100">
-        <div class="card product-card">
-          <img src="images/layers.webp" class="card-img-top" alt="Poultry">
+        <div class="card product-card h-100">
+          <img src="images/layers.webp" alt="Poultry">
           <div class="card-body text-center">
             <h5>Poultry</h5>
             <p>Healthy, well-raised birds</p>
@@ -176,13 +183,17 @@
 <!-- ABOUT -->
 <section id="about" class="bg-white py-5">
   <div class="container text-center" data-aos="fade-up">
-    <h2 class="text-success mb-3">About O-J Agrihub Farms</h2>
-    <p class="mx-auto" style="max-width:800px">
-      O-J Agrihub Farms is committed to sustainable agriculture,
-      healthy fish and poultry, and honest pricing.
-      From farm to table, quality comes first.
+    <h2 class="text-success mb-3">Welcome to O-J Farms</h2>
+
+    <p>
+      Think quality livestock... Think smart farming... Think sustainable future...
     </p>
-    <em>Healthy livestock. Honest prices.</em>
+
+    <p>
+      We are committed to raising healthy livestock using sustainable and ethical farming practices.
+    </p>
+
+    <p><em>Healthy livestock. Honest prices.</em></p>
   </div>
 </section>
 
@@ -205,7 +216,12 @@
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 800
+  });
+</script>
 
 </body>
 </html>
