@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>O-J Agrihub Farms</title>
 
-  <!-- Prevent Samsung Internet forced dark mode -->
+  <!-- Lock light mode -->
   <meta name="color-scheme" content="light">
   <meta name="supported-color-schemes" content="light">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- AOS Animations -->
+  <!-- AOS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
+    /* ---------------- GLOBAL ---------------- */
     html, body {
-      color-scheme: light !important;
-      background-color: #ffffff !important;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      color: #2b2b2b;
     }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      background-color: #f5f5f5;
-      color: #333;
+    /* ---------------- NAVBAR ---------------- */
+    .navbar {
+      background: #ffffff;
     }
 
     .navbar-brand {
@@ -40,55 +41,63 @@
       color: #1b5e20;
     }
 
-    .navbar-brand:hover {
-      color: #2e7d32;
-    }
-
-    /* HERO SECTION */
+    /* ---------------- HERO ---------------- */
     #hero {
-    position: relative;
-      background: url('images/agro.png') center center / cover no-repeat;
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      padding: 3rem 1.5rem;
+      position: relative;
+      background-image: url('images/agro.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 90vh;
+      width: 100%;
     }
 
-
-    /* REMOVE DARK OVERLAY COMPLETELY */
     #hero::before {
       content: none !important;
     }
 
-    #hero .hero-content {
-      position: relative;
-      z-index: 1;
+    /* ---------------- STATS ---------------- */
+    .stats h3 {
+      color: #1b5e20;
+      font-weight: 700;
     }
 
-    #about {
-      padding: 4rem 0;
-      background: #fff;
+    /* ---------------- PRODUCT CARDS ---------------- */
+    .product-card {
+      border: none;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    footer {
-      background: #1b5e20;
+    .product-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    /* ---------------- CTA ---------------- */
+    .cta {
+      background: linear-gradient(135deg,#1b5e20,#2e7d32);
       color: white;
+      padding: 4rem 1rem;
       text-align: center;
-      padding: 1rem;
     }
 
-    /* ---------- MOBILE FIX FOR FULL IMAGE ----------- */
-    @media (max-width: 912px) {
+    /* ---------------- FOOTER ---------------- */
+    footer {
+      background: #0f3d1b;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* ---------------- MOBILE ---------------- */
+    @media (max-width: 768px) {
       #hero {
-        background-size: contain !important;
-        background: url('images/mobile-agro.png') center center / cover no-repeat;
-        background-repeat: no-repeat;
+        min-height: 65vh;
         background-position: top center;
-        min-height: 60vh;
-        padding: 2rem 1rem;
-        background-color: #ffffff !important;
       }
     }
   </style>
@@ -96,48 +105,122 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container">
-      <a class="navbar-brand" href="#">O-J Agrihub Farms</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">O-J Agrihub Farms</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero"></section>
+
+<!-- STATS -->
+<section class="stats bg-white py-5">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <h3>100%</h3>
+        <p>Farm-raised produce</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <h3>Sustainable</h3>
+        <p>Ethical farming practices</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <h3>Trusted</h3>
+        <p>Homes & businesses</p>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- Hero Section -->
-  <section id="hero" class="text-center">
-    <div class="container hero-content" data-aos="fade-up">
+<!-- ABOUT (MOVED UP) -->
+<section id="about" class="bg-white py-5">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="text-success mb-3">Welcome to O-J Farms</h2>
+
+    <p>
+      Think quality livestock... Think smart farming... Think sustainable future...
+    </p>
+
+    <p>
+      We are committed to raising healthy livestock using sustainable and ethical farming practices.
+    </p>
+
+    <p><em>Healthy livestock. Honest prices.</em></p>
+  </div>
+</section>
+
+<!-- PRODUCTS (NOW BELOW WELCOME) -->
+<section id="products" class="py-5">
+  <div class="container">
+    <h2 class="text-center text-success mb-4" data-aos="fade-up">
+      Our Farm Products
+    </h2>
+
+    <div class="row justify-content-center gx-4">
+      <!-- CATFISH -->
+      <div class="col-md-5" data-aos="zoom-in">
+        <div class="card product-card h-100">
+          <img src="images/catfish_in_bowl6.jpg" alt="Fresh Catfish">
+          <div class="card-body text-center">
+            <h5>Fresh Catfish</h5>
+            <p>Table & smoke sizes available</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- POULTRY -->
+      <div class="col-md-5" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card product-card h-100">
+          <img src="images/layers.webp" alt="Poultry">
+          <div class="card-body text-center">
+            <h5>Poultry</h5>
+            <p>Coming Soon!</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container" data-aos="fade-up">
-      <h2 class="text-success text-center mb-4">Welcome to O-J Farms</h2>
-      <p class="text-center">Think quality livestock... Think smart farming... Think sustainable future...</p>
-      <p class="text-center">We are committed to raising healthy livestock using sustainable and ethical farming practices.</p>
-      <p class="text-center"><em>Healthy livestock. Honest prices.</em></p>
-    </div>
-  </section>
+<!-- CTA -->
+<section class="cta">
+  <div class="container" data-aos="zoom-in">
+    <h2 class="fw-bold mb-3">Looking for reliable farm supply?</h2>
+    <p>Fresh. Ethical. Direct from the farm.</p>
+    <a href="contact.html" class="btn btn-light btn-lg mt-2">
+      Contact Us
+    </a>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 O-J Agrihub Farms. All rights reserved.</p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  &copy; 2025 O-J Agrihub Farms · Obinze, Imo State · Nigeria
+</footer>
 
-  <!-- JS Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 800
+  });
+</script>
 
 </body>
 </html>
