@@ -116,19 +116,17 @@ a {
 /* ================================
    RESPONSIVE DESIGN
 ================================ */
-@media screen and (max-width: 912px) {
-
-  /* 🔥 Mobile background FIX */
-  body {
-    /* background-size: 100% 100%;   Stretch to fill mobile screen — no grey */
-    background-size: contain !important;
-    background-attachment: scroll;
-    background: url('images/mobile-agro.png') center center / cover no-repeat;
-    background-repeat: no-repeat; 
-    background-position: top center; 
-    min-height: 60vh; padding: 2rem 1rem;
+@media (max-width: 912px) {
+  #hero {
+    background-image: url('images/mobile-agro.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;      /* ✅ shows entire image */
+    background-color: #ffffff;     /* ✅ fills empty area cleanly */
+    min-height: 60vh;
+    padding: 0;                   /* ✅ remove to avoid shifting/cropping */
   }
-
+}
   header h1 { font-size: 2rem; }
   header p  { font-size: 1rem; }
 
