@@ -120,11 +120,13 @@ a {
 
   /* 🔥 Mobile background FIX */
   body {
-    background-position: top center;
     /* background-size: 100% 100%;   Stretch to fill mobile screen — no grey */
-    background-size: cover;
+    background-size: contain !important;
     background-attachment: scroll;
-    background: url('images/mobile-agro.png') no-repeat top center !important;
+    background: url('images/mobile-agro.png') center center / cover no-repeat;
+    background-repeat: no-repeat; 
+    background-position: top center; 
+    min-height: 60vh; padding: 2rem 1rem;
   }
 
   header h1 { font-size: 2rem; }
