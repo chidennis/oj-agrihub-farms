@@ -1,146 +1,325 @@
 /* ================================
-   GLOBAL STYLES
+   DESIGN SYSTEM
 ================================ */
+:root {
+  --green-900: #0f3d1b;
+  --green-700: #1b5e20;
+  --green-500: #43a047;
+  --green-100: #e8f5e9;
+
+  --white: #ffffff;
+  --text: #26332a;
+  --muted: #68756b;
+
+  --radius-sm: 12px;
+  --radius-lg: 24px;
+
+  --shadow-sm: 0 8px 24px rgba(15, 61, 27, 0.1);
+  --shadow-lg: 0 24px 60px rgba(15, 61, 27, 0.18);
+
+  --transition: 250ms ease;
+}
+
+/* ================================
+   RESET & GLOBAL
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
   margin: 0;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  color: var(--white);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 30, 13, 0.18),
+      rgba(7, 30, 13, 0.5)
+    ),
+    url("images/agro.png") center top / cover no-repeat;
+  overflow-x: hidden;
+}
 
-  /* Desktop background behavior */
-  background: url('images/agro.png') no-repeat center top;
-  background-size: cover;
-  background-attachment: scroll;  /* was 'fixed' — mobile bug */
-
-  color: #f5f5f5;
-  position: relative;
-  z-index: 0;
+img {
+  max-width: 100%;
+  display: block;
 }
 
 .container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
+  width: min(90%, 1100px);
+  margin-inline: auto;
   padding: 2rem 1rem;
+}
+
+a {
+  color: var(--green-700);
+  text-decoration: none;
+  transition:
+    color var(--transition),
+    opacity var(--transition);
+}
+
+a:hover {
+  color: var(--green-500);
 }
 
 /* ================================
    HEADER
 ================================ */
 header {
+  position: relative;
+  padding: clamp(4rem, 10vw, 7rem) 1rem;
   text-align: center;
-  padding: 4rem 1rem;
-  color: #fff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  animation: glow 2s ease-in-out infinite alternate;
+  color: var(--white);
+}
+
+header::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin: 1.5rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--green-500),
+    transparent
+  );
 }
 
 header h1 {
-  font-size: 2.5rem;
-  letter-spacing: 2px;
-  transform: scale(1.05);
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  animation: reveal 900ms ease both;
 }
 
 header p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
+  max-width: 680px;
+  margin: 1rem auto 0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  animation: reveal 900ms 150ms ease both;
 }
 
 /* ================================
-   HERO SECTION
+   HERO
 ================================ */
 .hero {
-  padding: 5rem 1.5rem 2rem;
+  width: min(92%, 850px);
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 6rem) 1.5rem;
   text-align: left;
-  max-width: 800px;
-  margin: auto;
-  animation: fadeDown 1.2s ease-in-out;
-
-  margin-left: -0.1in;
+  animation: reveal 900ms ease both;
 }
 
 .hero h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 1.4;
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 .hero p {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  max-width: 650px;
+  margin: 1.25rem 0 0;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ================================
+   CONTENT CARDS
+================================ */
+section.about,
+section.contact {
+  width: min(90%, 900px);
+  margin: 2rem auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  color: var(--text);
+
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  animation: cardReveal 850ms ease both;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+section.about:hover,
+section.contact:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 70px rgba(15, 61, 27, 0.22);
+}
+
+main h2 {
+  margin-top: 0;
+  color: var(--green-700);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+section.about p,
+section.contact p,
+section.contact li {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ================================
+   OPTIONAL BUTTON STYLE
+================================ */
+.btn,
+button {
+  border: 0;
+  border-radius: 999px;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background-color var(--transition);
+}
+
+.btn:hover,
+button:hover {
+  transform: translateY(-2px);
 }
 
 /* ================================
    ANIMATIONS
 ================================ */
-@keyframes glow {
-  from { text-shadow: 2px 2px 10px #2e7d32; }
-  to   { text-shadow: 2px 2px 20px #43a047; }
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
-@keyframes bounceDown {
-  0% { transform: translateY(-100px); opacity: 0; }
-  60% { transform: translateY(30px); opacity: 1; }
-  80% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(34px) scale(0.98);
+  }
 
-@keyframes fadeDown {
-  0% { transform: translateY(-20px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-/* ================================
-   CONTENT SECTIONS
-================================ */
-section.about,
-section.contact {
-  animation: bounceDown 1s ease;
-  margin-top: 2rem;
-  background: rgba(255, 255, 255, 0.9);
-  color: #333;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-main h2 { color: #2e7d32; }
-
-a {
-  color: #2e7d32;
-  text-decoration: none;
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* ================================
-   RESPONSIVE DESIGN
+   TABLET & MOBILE
 ================================ */
 @media (max-width: 912px) {
+  body {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7, 30, 13, 0.08),
+        rgba(7, 30, 13, 0.32)
+      ),
+      url("images/mobile-agro.png") top center / contain no-repeat,
+      var(--white);
+  }
+
   #hero {
-    background-image: url('images/mobile-agro.png');
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: contain;      /* ✅ shows entire image */
-    background-color: #ffffff;     /* ✅ fills empty area cleanly */
     min-height: 60vh;
-    padding: 0;                   /* ✅ remove to avoid shifting/cropping */
+    padding: 0;
+    background: transparent;
+  }
+
+  header {
+    padding: 3.5rem 1rem;
+  }
+
+  .hero {
+    width: 100%;
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .container {
+    width: 94%;
+    padding: 1.25rem 0.75rem;
+  }
+
+  section.about,
+  section.contact {
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 18px;
   }
 }
-  header h1 { font-size: 2rem; }
-  header p  { font-size: 1rem; }
 
-  .hero h1 { font-size: 1.5rem; }
-  .hero p  { font-size: 1rem; }
+/* ================================
+   SMALL PHONES
+================================ */
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 2rem;
+  }
 
-  .container,
-  section.about,
-  section.contact {
-    padding: 1rem;
+  header p {
+    font-size: 0.95rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
   }
 
   section.about,
   section.contact {
-    margin: 1rem;
+    padding: 1.25rem;
+  }
+}
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
