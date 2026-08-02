@@ -322,4 +322,11 @@ button:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  #hero {
+    height: 60vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
 }
